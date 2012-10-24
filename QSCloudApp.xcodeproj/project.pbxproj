@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D499EDFE16332A2C00E29D4B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D499EDFD16332A2C00E29D4B /* Cocoa.framework */; };
+		D499EE0416332A2C00E29D4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D499EE0216332A2C00E29D4B /* InfoPlist.strings */; };
+		D499EE1016332A2C00E29D4B /* QSCloudAppAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */; };
+		D499EE1316332A2C00E29D4B /* QSCloudAppSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D499EDFA16332A2C00E29D4B /* QSCloudApp.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSCloudApp.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D499EDFD16332A2C00E29D4B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D499EE0116332A2C00E29D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		D499EE0316332A2C00E29D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D499EE0616332A2C00E29D4B /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D499EE0716332A2C00E29D4B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D499EE0816332A2C00E29D4B /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		D499EE0916332A2C00E29D4B /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		D499EE0A16332A2C00E29D4B /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		D499EE0B16332A2C00E29D4B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D499EE0E16332A2C00E29D4B /* QSCloudAppAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSCloudAppAction.h; sourceTree = "<group>"; };
+		D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSCloudAppAction.m; sourceTree = "<group>"; };
+		D499EE1116332A2C00E29D4B /* QSCloudAppSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSCloudAppSource.h; sourceTree = "<group>"; };
+		D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSCloudAppSource.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D499EDF716332A2C00E29D4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D499EDFE16332A2C00E29D4B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D499EDEE16332A2C00E29D4B = {
+			isa = PBXGroup;
+			children = (
+				D499EE0516332A2C00E29D4B /* Configuration */,
+				D499EDFF16332A2C00E29D4B /* QSCloudApp */,
+				D499EDFC16332A2C00E29D4B /* Frameworks */,
+				D499EDFB16332A2C00E29D4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D499EDFB16332A2C00E29D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D499EDFA16332A2C00E29D4B /* QSCloudApp.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D499EDFC16332A2C00E29D4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D499EDFD16332A2C00E29D4B /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D499EDFF16332A2C00E29D4B /* QSCloudApp */ = {
+			isa = PBXGroup;
+			children = (
+				D499EE0E16332A2C00E29D4B /* QSCloudAppAction.h */,
+				D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */,
+				D499EE1116332A2C00E29D4B /* QSCloudAppSource.h */,
+				D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */,
+				D499EE0016332A2C00E29D4B /* Supporting Files */,
+			);
+			path = QSCloudApp;
+			sourceTree = "<group>";
+		};
+		D499EE0016332A2C00E29D4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D499EE0116332A2C00E29D4B /* Info.plist */,
+				D499EE0216332A2C00E29D4B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D499EE0516332A2C00E29D4B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D499EE0616332A2C00E29D4B /* Common.xcconfig */,
+				D499EE0716332A2C00E29D4B /* Debug.xcconfig */,
+				D499EE0816332A2C00E29D4B /* Developer.xcconfig */,
+				D499EE0916332A2C00E29D4B /* QSPlugIn.xcconfig */,
+				D499EE0A16332A2C00E29D4B /* Quicksilver.pch */,
+				D499EE0B16332A2C00E29D4B /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = /private/tmp/QS/Configuration;
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D499EDF916332A2C00E29D4B /* QSCloudApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "QSCloudApp" */;
+			buildPhases = (
+				D499EDF516332A2C00E29D4B /* ShellScript */,
+				D499EDF616332A2C00E29D4B /* Sources */,
+				D499EDF716332A2C00E29D4B /* Frameworks */,
+				D499EDF816332A2C00E29D4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QSCloudApp;
+			productName = QSCloudApp;
+			productReference = D499EDFA16332A2C00E29D4B /* QSCloudApp.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D499EDF016332A2C00E29D4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Quicksilver;
+			};
+			buildConfigurationList = D499EDF316332A2C00E29D4B /* Build configuration list for PBXProject "QSCloudApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D499EDEE16332A2C00E29D4B;
+			productRefGroup = D499EDFB16332A2C00E29D4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D499EDF916332A2C00E29D4B /* QSCloudApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D499EDF816332A2C00E29D4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D499EE0416332A2C00E29D4B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D499EDF516332A2C00E29D4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D499EDF616332A2C00E29D4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D499EE1016332A2C00E29D4B /* QSCloudAppAction.m in Sources */,
+				D499EE1316332A2C00E29D4B /* QSCloudAppSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D499EE0216332A2C00E29D4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D499EE0316332A2C00E29D4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D499EE1416332A2C00E29D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D499EE0716332A2C00E29D4B /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D499EE1516332A2C00E29D4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D499EE0B16332A2C00E29D4B /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		D499EE1716332A2C00E29D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D499EE0916332A2C00E29D4B /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D499EE1816332A2C00E29D4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D499EE0916332A2C00E29D4B /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D499EDF316332A2C00E29D4B /* Build configuration list for PBXProject "QSCloudApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D499EE1416332A2C00E29D4B /* Debug */,
+				D499EE1516332A2C00E29D4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "QSCloudApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D499EE1716332A2C00E29D4B /* Debug */,
+				D499EE1816332A2C00E29D4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D499EDF016332A2C00E29D4B /* Project object */;
+}
