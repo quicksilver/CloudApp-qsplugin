@@ -14,6 +14,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4153EB21638650B002AE924 /* CLAPIDeserializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPIDeserializer.h; sourceTree = "<group>"; };
+		D4153EB31638650B002AE924 /* CLAPIDeserializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAPIDeserializer.m; sourceTree = "<group>"; };
+		D4153EB41638650B002AE924 /* CLAPISerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPISerializer.h; sourceTree = "<group>"; };
+		D4153EB51638650B002AE924 /* CLAPISerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAPISerializer.m; sourceTree = "<group>"; };
+		D4153EB71638650B002AE924 /* NSMutableURLRequest+NPPOSTBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+NPPOSTBody.h"; sourceTree = "<group>"; };
+		D4153EB81638650B002AE924 /* NSMutableURLRequest+NPPOSTBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+NPPOSTBody.m"; sourceTree = "<group>"; };
+		D4153EB91638650B002AE924 /* NSString+NPAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NPAdditions.h"; sourceTree = "<group>"; };
+		D4153EBA1638650B002AE924 /* NSString+NPAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NPAdditions.m"; sourceTree = "<group>"; };
+		D4153EBB1638650B002AE924 /* NSString+NPMimeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NPMimeType.h"; sourceTree = "<group>"; };
+		D4153EBC1638650B002AE924 /* NSString+NPMimeType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NPMimeType.m"; sourceTree = "<group>"; };
+		D4153EBD1638650B002AE924 /* CLAPIEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPIEngine.h; sourceTree = "<group>"; };
+		D4153EBE1638650B002AE924 /* CLAPIEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAPIEngine.m; sourceTree = "<group>"; };
+		D4153EBF1638650B002AE924 /* CLAPIEngineConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPIEngineConstants.h; sourceTree = "<group>"; };
+		D4153EC01638650B002AE924 /* CLAPIEngineConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAPIEngineConstants.m; sourceTree = "<group>"; };
+		D4153EC11638650B002AE924 /* CLAPIEngineDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPIEngineDelegate.h; sourceTree = "<group>"; };
+		D4153EC21638650B002AE924 /* CLAPITransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAPITransaction.h; sourceTree = "<group>"; };
+		D4153EC31638650B002AE924 /* CLAPITransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAPITransaction.m; sourceTree = "<group>"; };
+		D4153EC41638650B002AE924 /* Cloud-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cloud-Prefix.pch"; sourceTree = "<group>"; };
+		D4153EC51638650B002AE924 /* Cloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
+		D4153EC71638650B002AE924 /* CLAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAccount.h; sourceTree = "<group>"; };
+		D4153EC81638650B002AE924 /* CLAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAccount.m; sourceTree = "<group>"; };
+		D4153EC91638650B002AE924 /* CLSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSocket.h; sourceTree = "<group>"; };
+		D4153ECA1638650B002AE924 /* CLSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSocket.m; sourceTree = "<group>"; };
+		D4153ECB1638650B002AE924 /* CLWebItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLWebItem.h; sourceTree = "<group>"; };
+		D4153ECC1638650B002AE924 /* CLWebItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLWebItem.m; sourceTree = "<group>"; };
 		D499EDFA16332A2C00E29D4B /* QSCloudApp.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSCloudApp.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		D499EDFD16332A2C00E29D4B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D499EE0116332A2C00E29D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -42,6 +67,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4153EB01638650B002AE924 /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+				D4153EB11638650B002AE924 /* API Parsing */,
+				D4153EB61638650B002AE924 /* Categories */,
+				D4153EBD1638650B002AE924 /* CLAPIEngine.h */,
+				D4153EBE1638650B002AE924 /* CLAPIEngine.m */,
+				D4153EBF1638650B002AE924 /* CLAPIEngineConstants.h */,
+				D4153EC01638650B002AE924 /* CLAPIEngineConstants.m */,
+				D4153EC11638650B002AE924 /* CLAPIEngineDelegate.h */,
+				D4153EC21638650B002AE924 /* CLAPITransaction.h */,
+				D4153EC31638650B002AE924 /* CLAPITransaction.m */,
+				D4153EC41638650B002AE924 /* Cloud-Prefix.pch */,
+				D4153EC51638650B002AE924 /* Cloud.h */,
+				D4153EC61638650B002AE924 /* Model */,
+				D4153ECD1638650B002AE924 /* Third Party */,
+			);
+			path = Cloud;
+			sourceTree = "<group>";
+		};
+		D4153EB11638650B002AE924 /* API Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				D4153EB21638650B002AE924 /* CLAPIDeserializer.h */,
+				D4153EB31638650B002AE924 /* CLAPIDeserializer.m */,
+				D4153EB41638650B002AE924 /* CLAPISerializer.h */,
+				D4153EB51638650B002AE924 /* CLAPISerializer.m */,
+			);
+			path = "API Parsing";
+			sourceTree = "<group>";
+		};
+		D4153EB61638650B002AE924 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D4153EB71638650B002AE924 /* NSMutableURLRequest+NPPOSTBody.h */,
+				D4153EB81638650B002AE924 /* NSMutableURLRequest+NPPOSTBody.m */,
+				D4153EB91638650B002AE924 /* NSString+NPAdditions.h */,
+				D4153EBA1638650B002AE924 /* NSString+NPAdditions.m */,
+				D4153EBB1638650B002AE924 /* NSString+NPMimeType.h */,
+				D4153EBC1638650B002AE924 /* NSString+NPMimeType.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D4153EC61638650B002AE924 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4153EC71638650B002AE924 /* CLAccount.h */,
+				D4153EC81638650B002AE924 /* CLAccount.m */,
+				D4153EC91638650B002AE924 /* CLSocket.h */,
+				D4153ECA1638650B002AE924 /* CLSocket.m */,
+				D4153ECB1638650B002AE924 /* CLWebItem.h */,
+				D4153ECC1638650B002AE924 /* CLWebItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4153ECD1638650B002AE924 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				D4153ECE1638650B002AE924 /* IFUnicodeURL */,
+				D4153ECF1638650B002AE924 /* JSON */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		D4153ECE1638650B002AE924 /* IFUnicodeURL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IFUnicodeURL;
+			sourceTree = "<group>";
+		};
+		D4153ECF1638650B002AE924 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		D499EDEE16332A2C00E29D4B = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +180,7 @@
 				D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */,
 				D499EE1116332A2C00E29D4B /* QSCloudAppSource.h */,
 				D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */,
+				D4153EB01638650B002AE924 /* Cloud */,
 				D499EE0016332A2C00E29D4B /* Supporting Files */,
 			);
 			path = QSCloudApp;
