@@ -5,9 +5,6 @@
 //  Created by Rob McBroom on 2012/10/20.
 //
 
-#define QSQSCloudAppType @"QSQSCloudAppType"
+@interface QSCloudAppSource : QSObjectSource
 
-@interface QSQSCloudAppSource : QSObjectSource
-{
-}
 @end

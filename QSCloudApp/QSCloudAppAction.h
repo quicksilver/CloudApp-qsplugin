@@ -5,7 +5,6 @@
 //  Created by Rob McBroom on 2012/10/20.
 //
 
-@interface QSQSCloudAppActionProvider : QSActionProvider
-{
-}
+@interface QSCloudAppActionProvider : QSActionProvider
+
 @end

@@ -27,12 +27,12 @@
 		<key>QSCloudAppExampleAction</key>
 		<dict>
 			<key>actionClass</key>
-			<string>QSQSCloudAppActionProvider</string>
+			<string>QSCloudAppActionProvider</string>
 			<key>actionSelector</key>
 			<string>performActionOnObject:</string>
 			<key>directTypes</key>
 			<array>
-				<string>QSQSCloudAppType</string>
+				<string>QSCloudAppType</string>
 			</array>
 			<key>icon</key>
 			<string>ToolbarAdvanced</string>
@@ -70,15 +70,15 @@
 			<key>name</key>
 			<string>CloudApp Files</string>
 			<key>source</key>
-			<string>QSQSCloudAppSource</string>
+			<string>QSCloudAppSource</string>
 		</dict>
 	</array>
 	<key>QSRegistration</key>
 	<dict>
 		<key>QSActionProviders</key>
 		<dict>
-			<key>QSQSCloudAppActionProvider</key>
-			<string>QSQSCloudAppActionProvider</string>
+			<key>QSCloudAppActionProvider</key>
+			<string>QSCloudAppActionProvider</string>
 		</dict>
 		<key>QSApplicationActionsTemplate</key>
 		<dict>
@@ -87,7 +87,7 @@
 				<key>QSCloudAppExampleCommand</key>
 				<dict>
 					<key>actionClass</key>
-					<string>QSQSCloudAppActionProvider</string>
+					<string>QSCloudAppActionProvider</string>
 					<key>command</key>
 					<string>QSCloudAppExampleCommand</string>
 					<key>name</key>
@@ -97,13 +97,8 @@
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
-			<key>QSQSCloudAppType</key>
-			<string>QSQSCloudAppSource</string>
-		</dict>
-		<key>QSBundleChildHandlersTemplate</key>
-		<dict>
-			<key>com.domain.application</key>
-			<string>QSQSCloudAppSource</string>
+			<key>com.linebreak.CloudAppMacOSX</key>
+			<string>QSCloudAppSource</string>
 		</dict>
 		<key>QSCommandsTemplate</key>
 		<dict>
@@ -120,7 +115,7 @@
 							<key>qs.action</key>
 							<dict>
 								<key>actionClass</key>
-								<string>QSQSCloudAppActionProvider</string>
+								<string>QSCloudAppActionProvider</string>
 								<key>actionSelector</key>
 								<string>someSelector</string>
 								<key>icon</key>
@@ -137,13 +132,13 @@
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>
-			<key>QSQSCloudAppType</key>
-			<string>QSQSCloudAppSource</string>
+			<key>QSCloudFileType</key>
+			<string>QSCloudAppSource</string>
 		</dict>
 		<key>QSObjectSources</key>
 		<dict>
-			<key>QSQSCloudAppSource</key>
-			<string>QSQSCloudAppSource</string>
+			<key>QSCloudAppSource</key>
+			<string>QSCloudAppSource</string>
 		</dict>
 		<key>QSPreferencePanesTemplate</key>
 		<dict>
@@ -168,7 +163,7 @@
 				<key>name</key>
 				<string>QSCloudApp Proxy</string>
 				<key>providerClass</key>
-				<string>QSQSCloudAppSource</string>
+				<string>QSCloudAppSource</string>
 				<key>types</key>
 				<array>
 					<string>QSQSCloudAppType</string>
@@ -184,7 +179,7 @@
 				<key>name</key>
 				<string>Do something in response to this event</string>
 				<key>provider</key>
-				<string>QSQSCloudAppSource</string>
+				<string>QSCloudAppSource</string>
 			</dict>
 		</dict>
 		<key>QSTriggerSetsTemplates</key>
@@ -199,12 +194,10 @@
 		</dict>
 		<key>QSTypeDefinitions</key>
 		<dict>
-			<key>QSQSCloudAppType</key>
+			<key>QSCloudFileType</key>
 			<dict>
-				<key>icon</key>
-				<string>GenericDocumentIcon</string>
 				<key>name</key>
-				<string>QSCloudApp Object</string>
+				<string>Cloud File</string>
 			</dict>
 		</dict>
 	</dict>

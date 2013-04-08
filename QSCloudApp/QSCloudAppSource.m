@@ -5,12 +5,14 @@
 //  Created by Rob McBroom on 2012/10/20.
 //
 
+#import "QSCloudDelegate.h"
 #import "QSCloudAppSource.h"
 
-@implementation QSQSCloudAppSource
+@implementation QSCloudAppSource
 
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry
 {
+    // always rescan
 	return NO;
 }
 
@@ -19,39 +21,36 @@
 	return nil;
 }
 
-// Return a unique identifier for an object (if you haven't assigned one before)
-//- (NSString *)identifierForObject:(id <QSObject>)object
-//{
-//	return nil;
-//}
-
-- (NSArray *) objectsForEntry:(NSDictionary *)theEntry
+- (BOOL)loadObjectsForEntry:(QSCatalogEntry *)theEntry
 {
-	NSMutableArray *objects=[NSMutableArray arrayWithCapacity:1];
-	QSObject *newObject;
-	
-	newObject=[QSObject objectWithName:@"TestObject"];
-	[newObject setObject:@"" forType:QSQSCloudAppType];
-	[newObject setPrimaryType:QSQSCloudAppType];
-	[objects addObject:newObject];
-	
-	return objects;
+    CLAPIEngine *engine = [[QSCloudDelegate sharedInstance] engine];
+    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:10 userInfo:theEntry];
+    //NSLog(@"Cloud Transaction ID: %@", result);
+    return YES;
 }
 
-// Object Handler Methods
+#pragma mark Object Handler Methods
 
-/*
 - (void)setQuickIconForObject:(QSObject *)object
 {
-	[object setIcon:nil]; // An icon that is either already in memory or easy to load
+    NSString *extension = [[object name] pathExtension];
+    if (extension) {
+        [object setIcon:[[NSWorkspace sharedWorkspace] iconForFileType:extension]];
+    }
 }
 
-- (BOOL)loadIconForObject:(QSObject *)object
+- (BOOL)objectHasChildren:(QSObject *)object
 {
-	return NO;
-	id data=[object objectForType:QSQSCloudAppType];
-	[object setIcon:nil];
-	return YES;
+    return [object isApplication];
 }
-*/
+
+- (BOOL)loadChildrenForObject:(QSObject *)object
+{
+    if ([object isApplication]) {
+        [object setChildren:[QSLib arrayForType:QSCloudFileType]];
+        return YES;
+    }
+    return NO;
+}
+
 @end
