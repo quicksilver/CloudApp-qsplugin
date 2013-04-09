@@ -63,6 +63,7 @@ static QSCloudDelegate *_sharedInstance;
     for (CLWebItem *cloudItem in items) {
         ident = [NSString stringWithFormat:@"CloudAppFile:%@", [cloudItem name]];
         newObject = [QSObject makeObjectWithIdentifier:ident];
+        [newObject setObject:cloudItem forCache:QSCloudWebItemKey];
         [newObject setObject:[cloudItem name] forType:QSCloudFileType];
         [newObject setName:[cloudItem name]];
         NSUInteger views = [cloudItem viewCount];
