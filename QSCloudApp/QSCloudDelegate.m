@@ -53,27 +53,36 @@ static QSCloudDelegate *_sharedInstance;
 
 #pragma mark Quicksilver Methods
 
+- (QSObject *)objectFromWebItem:(CLWebItem *)cloudItem existingObject:(QSObject *)existingObject
+{
+    NSString *ident = [NSString stringWithFormat:@"CloudAppFile:%@", [cloudItem name]];
+    QSObject *newObject = nil;
+    if (existingObject) {
+        newObject = existingObject;
+        [newObject setIdentifier:ident];
+    } else {
+        newObject = [QSObject makeObjectWithIdentifier:ident];
+    }
+    [newObject setObject:cloudItem forCache:QSCloudWebItemKey];
+    [newObject setObject:[cloudItem name] forType:QSCloudFileType];
+    [newObject setName:[cloudItem name]];
+    NSUInteger views = [cloudItem viewCount];
+    NSString *details = [NSString stringWithFormat:@"Viewed %ld Time%@", views, (views == 1) ? @"" : @"s"];
+    [newObject setDetails:details];
+    //NSLog(@"Cloud URLs %@ | %@ | %@", [thing URL], [thing remoteURL], [thing href]);
+    [newObject setObject:[[cloudItem URL] absoluteString] forType:QSTextType];
+    [newObject setObject:[[cloudItem remoteURL] absoluteString] forType:QSCloudDownloadURLType];
+    [newObject setPrimaryType:QSCloudFileType];
+    return newObject;
+}
+
 #pragma mark Cloud API Delegate Methods
 
 - (void)itemListRetrievalSucceeded:(NSArray *)items connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
 {
     NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[items count]];
-    QSObject *newObject = nil;
-    NSString *ident = nil;
     for (CLWebItem *cloudItem in items) {
-        ident = [NSString stringWithFormat:@"CloudAppFile:%@", [cloudItem name]];
-        newObject = [QSObject makeObjectWithIdentifier:ident];
-        [newObject setObject:cloudItem forCache:QSCloudWebItemKey];
-        [newObject setObject:[cloudItem name] forType:QSCloudFileType];
-        [newObject setName:[cloudItem name]];
-        NSUInteger views = [cloudItem viewCount];
-        NSString *details = [NSString stringWithFormat:@"Viewed %ld Time%@", views, (views == 1) ? @"" : @"s"];
-        [newObject setDetails:details];
-        //NSLog(@"Cloud URLs %@ | %@ | %@", [thing URL], [thing remoteURL], [thing href]);
-        [newObject setObject:[[cloudItem URL] absoluteString] forType:QSTextType];
-        [newObject setObject:[[cloudItem remoteURL] absoluteString] forType:QSCloudDownloadURLType];
-        [newObject setPrimaryType:QSCloudFileType];
-        [objects addObject:newObject];
+        [objects addObject:[self objectFromWebItem:cloudItem existingObject:nil]];
     }
     [(QSCatalogEntry *)userInfo completeScanWithContents:objects];
     //NSLog(@"Cloud Item list: %@", items);
