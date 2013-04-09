@@ -67,8 +67,8 @@ static QSCloudDelegate *_sharedInstance;
         [newObject setName:[thing name]];
         [newObject setDetails:@"Remote Cloud File"];
         //NSLog(@"Cloud URLs %@ | %@ | %@", [thing URL], [thing remoteURL], [thing href]);
-        [newObject setObject:[thing URL] forType:QSCloudURLType];
-        [newObject setObject:[thing remoteURL] forType:QSCloudDownloadURLType];
+        [newObject setObject:[[thing URL] absoluteString] forType:QSCloudURLType];
+        [newObject setObject:[[thing remoteURL] absoluteString] forType:QSCloudDownloadURLType];
         [newObject setPrimaryType:QSCloudFileType];
         [objects addObject:newObject];
     }
