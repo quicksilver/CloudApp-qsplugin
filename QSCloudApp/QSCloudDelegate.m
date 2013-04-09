@@ -22,9 +22,22 @@ static QSCloudDelegate *_sharedInstance;
 {
     self = [super init];
     if (self) {
-        engine = [CLAPIEngine engineWithDelegate:self];
+        engine = [[CLAPIEngine engineWithDelegate:self] retain];
     }
-    return [self authenticate] ? self : nil;
+    BOOL auth = [self authenticate];
+    if (auth) {
+        return self;
+    } else {
+        [self release];
+        return nil;
+    }
+}
+
+- (void)dealloc
+{
+    [engine release];
+    engine = nil;
+    [super dealloc];
 }
 
 - (BOOL)authenticate
