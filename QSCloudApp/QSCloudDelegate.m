@@ -60,15 +60,17 @@ static QSCloudDelegate *_sharedInstance;
     NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[items count]];
     QSObject *newObject = nil;
     NSString *ident = nil;
-    for (CLWebItem *thing in items) {
-        ident = [NSString stringWithFormat:@"CloudAppFile:%@", [thing name]];
+    for (CLWebItem *cloudItem in items) {
+        ident = [NSString stringWithFormat:@"CloudAppFile:%@", [cloudItem name]];
         newObject = [QSObject makeObjectWithIdentifier:ident];
-        [newObject setObject:[thing name] forType:QSCloudFileType];
-        [newObject setName:[thing name]];
-        [newObject setDetails:@"Remote Cloud File"];
+        [newObject setObject:[cloudItem name] forType:QSCloudFileType];
+        [newObject setName:[cloudItem name]];
+        NSUInteger views = [cloudItem viewCount];
+        NSString *details = [NSString stringWithFormat:@"Viewed %ld Time%@", views, (views == 1) ? @"" : @"s"];
+        [newObject setDetails:details];
         //NSLog(@"Cloud URLs %@ | %@ | %@", [thing URL], [thing remoteURL], [thing href]);
-        [newObject setObject:[[thing URL] absoluteString] forType:QSCloudURLType];
-        [newObject setObject:[[thing remoteURL] absoluteString] forType:QSCloudDownloadURLType];
+        [newObject setObject:[[cloudItem URL] absoluteString] forType:QSCloudURLType];
+        [newObject setObject:[[cloudItem remoteURL] absoluteString] forType:QSCloudDownloadURLType];
         [newObject setPrimaryType:QSCloudFileType];
         [objects addObject:newObject];
     }
