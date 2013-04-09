@@ -7,6 +7,5 @@
 
 #define QSCloudWebItemKey @"QSCloudWebItemKey"
 #define QSCloudFileType @"QSCloudFileType"
-#define QSCloudURLType  @"QSCloudURLType"
 #define QSCloudDownloadURLType  @"QSCloudDownloadURLType"
 #define QSCloudAppServiceName @"CloudApp"

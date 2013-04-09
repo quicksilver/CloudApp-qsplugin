@@ -70,7 +70,7 @@ static QSCloudDelegate *_sharedInstance;
         NSString *details = [NSString stringWithFormat:@"Viewed %ld Time%@", views, (views == 1) ? @"" : @"s"];
         [newObject setDetails:details];
         //NSLog(@"Cloud URLs %@ | %@ | %@", [thing URL], [thing remoteURL], [thing href]);
-        [newObject setObject:[[cloudItem URL] absoluteString] forType:QSCloudURLType];
+        [newObject setObject:[[cloudItem URL] absoluteString] forType:QSTextType];
         [newObject setObject:[[cloudItem remoteURL] absoluteString] forType:QSCloudDownloadURLType];
         [newObject setPrimaryType:QSCloudFileType];
         [objects addObject:newObject];
