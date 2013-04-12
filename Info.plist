@@ -21,21 +21,183 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>QSActions</key>
 	<dict>
-		<key>QSCloudAppExampleAction</key>
+		<key>QSCloudCopyLinkAction</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSCloudAppActionProvider</string>
 			<key>actionSelector</key>
-			<string>performActionOnObject:</string>
+			<string>copyLinkForCloudItem:</string>
 			<key>directTypes</key>
 			<array>
-				<string>QSCloudAppType</string>
+				<string>QSCloudFileType</string>
 			</array>
 			<key>icon</key>
-			<string>ToolbarAdvanced</string>
+			<string>DefaultBookmarkIcon</string>
+			<key>name</key>
+			<string>Copy Link for Item</string>
+			<key>precedence</key>
+			<real>2</real>
+		</dict>
+		<key>QSCloudDeleteItemAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>deleteItem:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>icon</key>
+			<string>TrashIcon</string>
+			<key>name</key>
+			<string>Delete Item</string>
+			<key>precedence</key>
+			<real>1</real>
+		</dict>
+		<key>QSCloudDisablePrivacyAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>disablePrivacyforItem:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>icon</key>
+			<string>com.linebreak.CloudAppMacOSX</string>
+			<key>name</key>
+			<string>Make Item Public</string>
+			<key>precedence</key>
+			<integer>1</integer>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSCloudDownloadFileAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>downloadFile:toFolder:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>displaysResult</key>
+			<true/>
+			<key>icon</key>
+			<string>DriveIcon</string>
+			<key>indirectOptional</key>
+			<false/>
+			<key>indirectTypes</key>
+			<array>
+				<string>NSFileNamesPboardType</string>
+			</array>
+			<key>name</key>
+			<string>Download File To…</string>
+			<key>precedence</key>
+			<real>1.5</real>
+		</dict>
+		<key>QSCloudEnablePrivacyAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>enablePrivacyforItem:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>icon</key>
+			<string>com.linebreak.CloudAppMacOSX</string>
+			<key>name</key>
+			<string>Make Item Private</string>
+			<key>precedence</key>
+			<integer>1</integer>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSCloudGetLinkAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>getLinkForCloudItem:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>displaysResult</key>
+			<true/>
+			<key>icon</key>
+			<string>DefaultBookmarkIcon</string>
+			<key>name</key>
+			<string>Get Link for Item</string>
+			<key>precedence</key>
+			<real>1.2</real>
+		</dict>
+		<key>QSCloudRenameItemAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>renameItem:to:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>icon</key>
+			<string>com.linebreak.CloudAppMacOSX</string>
+			<key>indirectOptional</key>
+			<false/>
+			<key>indirectTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>name</key>
+			<string>Rename…</string>
+			<key>precedence</key>
+			<real>1.5</real>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
+		<key>QSCloudTogglePrivacyAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>togglePrivacyforItem:</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSCloudFileType</string>
+			</array>
+			<key>icon</key>
+			<string>com.linebreak.CloudAppMacOSX</string>
+			<key>name</key>
+			<string>Toggle Privacy</string>
+			<key>precedence</key>
+			<integer>1</integer>
+		</dict>
+		<key>QSCloudUploadFileAction</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSCloudAppActionProvider</string>
+			<key>actionSelector</key>
+			<string>uploadFile:</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>com.linebreak.CloudAppMacOSX</string>
+			<key>name</key>
+			<string>Upload File to CloudApp</string>
+			<key>validatesObjects</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>QSPlugIn</key>
