@@ -97,8 +97,15 @@ static QSCloudDelegate *_sharedInstance;
     for (CLWebItem *cloudItem in items) {
         [objects addObject:[self objectFromWebItem:cloudItem existingObject:nil]];
     }
-    [(QSCatalogEntry *)userInfo completeScanWithContents:objects];
+    QSCatalogEntry *entry = [userInfo objectForKey:@"entry"];
+    [entry completeScanWithContents:objects];
     //NSLog(@"Cloud Item list: %@", items);
+}
+
+- (void)itemDeletionDidSucceed:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
+{
+    // post a user notification
+    QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudFileDeleted", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"File Deleted", QSNotifierTitle, [userInfo objectForKey:@"name"], QSNotifierText, nil]);
 }
 
 - (void)requestDidSucceedWithConnectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
@@ -108,17 +115,25 @@ static QSCloudDelegate *_sharedInstance;
 
 - (void)requestDidFailWithError:(NSError *)error connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo {
 	NSLog(@"Error communicating with CloudApp: %@", error);
-    if ([userInfo respondsToSelector:@selector(completeScanWithContents:)]) {
-        [(QSCatalogEntry *)userInfo completeScanWithContents:nil];
+    QSCatalogEntry *entry = [userInfo objectForKey:@"entry"];
+    if (entry && [entry respondsToSelector:@selector(completeScanWithContents:)]) {
+        [entry completeScanWithContents:nil];
     }
 }
 
 - (void)fileUploadDidProgress:(CGFloat)percentageComplete connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo {
-	NSLog(@"[UPLOAD PROGRESS]: %@, %f", connectionIdentifier, percentageComplete);
+	//NSLog(@"[UPLOAD PROGRESS]: %@, %f", connectionIdentifier, percentageComplete);
+    QSTask *task = [userInfo objectForKey:@"task"];
+    [task setProgress:percentageComplete];
 }
 
 - (void)fileUploadDidSucceedWithResultingItem:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo {
-	NSLog(@"[UPLOAD SUCCESS]: %@, %@", connectionIdentifier, item);
+	//NSLog(@"[UPLOAD SUCCESS]: %@, %@", connectionIdentifier, item);
+    QSTask *task = [userInfo objectForKey:@"task"];
+    QSObject *placeholder = [userInfo objectForKey:@"upload"];
+    [self objectFromWebItem:item existingObject:placeholder];
+    [task stopTask:nil];
+    QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudUploadComplete", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"Upload Complete", QSNotifierTitle, [item name], QSNotifierText, nil]);
 }
 
 @end
