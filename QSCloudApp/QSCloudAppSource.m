@@ -24,7 +24,8 @@
 - (BOOL)loadObjectsForEntry:(QSCatalogEntry *)theEntry
 {
     CLAPIEngine *engine = [[QSCloudDelegate sharedInstance] engine];
-    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:10 userInfo:theEntry];
+    NSDictionary *info = @{@"entry": theEntry};
+    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:10 userInfo:info];
     //NSLog(@"Cloud Transaction ID: %@", result);
     return YES;
 }
