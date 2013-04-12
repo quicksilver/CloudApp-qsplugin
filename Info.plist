@@ -15,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>CloudApp</string>
+	<string>CloudApp Plugin</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -37,7 +37,7 @@
 			<key>icon</key>
 			<string>DefaultBookmarkIcon</string>
 			<key>name</key>
-			<string>Copy Link for Item</string>
+			<string>Copy Link</string>
 			<key>precedence</key>
 			<real>2</real>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>icon</key>
 			<string>TrashIcon</string>
 			<key>name</key>
-			<string>Delete Item</string>
+			<string>Delete</string>
 			<key>precedence</key>
 			<real>1</real>
 		</dict>
@@ -98,7 +98,7 @@
 				<string>NSFileNamesPboardType</string>
 			</array>
 			<key>name</key>
-			<string>Download File To…</string>
+			<string>Download To Folder…</string>
 			<key>precedence</key>
 			<real>1.5</real>
 		</dict>
@@ -136,7 +136,7 @@
 			<key>icon</key>
 			<string>DefaultBookmarkIcon</string>
 			<key>name</key>
-			<string>Get Link for Item</string>
+			<string>Get Link</string>
 			<key>precedence</key>
 			<real>1.2</real>
 		</dict>
@@ -195,7 +195,7 @@
 			<key>icon</key>
 			<string>com.linebreak.CloudAppMacOSX</string>
 			<key>name</key>
-			<string>Upload File to CloudApp</string>
+			<string>Upload to CloudApp</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -219,7 +219,7 @@
 			<string>Images</string>
 		</array>
 		<key>description</key>
-		<string>Interact with CloudApp</string>
+		<string>Upload, download, and manage CloudApp files</string>
 		<key>extendedDescription</key>
 		<string>&lt;h1&gt;CloudApp&lt;/h1&gt;</string>
 		<key>icon</key>
