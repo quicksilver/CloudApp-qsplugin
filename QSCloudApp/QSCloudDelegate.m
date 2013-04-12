@@ -102,9 +102,18 @@ static QSCloudDelegate *_sharedInstance;
     //NSLog(@"Cloud Item list: %@", items);
 }
 
+- (void)itemUpdateDidSucceed:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
+{
+    NSString *message = [userInfo objectForKey:@"message"];
+    if (message) {
+        NSString *name = [userInfo objectForKey:@"name"] ? [userInfo objectForKey:@"name"] : @"Item";
+        NSString *title = [NSString stringWithFormat:@"%@ Updated", name];
+        QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudItemUpdated", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, title, QSNotifierTitle, message, QSNotifierText, nil]);
+    }
+}
+
 - (void)itemDeletionDidSucceed:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
 {
-    // post a user notification
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudFileDeleted", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"File Deleted", QSNotifierTitle, [userInfo objectForKey:@"name"], QSNotifierText, nil]);
 }
 
