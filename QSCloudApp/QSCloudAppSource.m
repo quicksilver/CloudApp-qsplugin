@@ -25,7 +25,8 @@
 {
     CLAPIEngine *engine = [[QSCloudDelegate sharedInstance] engine];
     NSDictionary *info = @{@"entry": theEntry};
-    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:10 userInfo:info];
+    NSUInteger itemLimit = [[NSUserDefaults standardUserDefaults] integerForKey:@"QSCloudAppItemLimit"];
+    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:itemLimit userInfo:info];
     //NSLog(@"Cloud Transaction ID: %@", result);
     return YES;
 }

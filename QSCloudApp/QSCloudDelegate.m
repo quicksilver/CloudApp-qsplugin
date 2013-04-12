@@ -142,7 +142,9 @@ static QSCloudDelegate *_sharedInstance;
     QSObject *placeholder = [userInfo objectForKey:@"upload"];
     [self objectFromWebItem:item existingObject:placeholder];
     [task stopTask:nil];
-    [placeholder putOnPasteboardAsPlainTextOnly:[NSPasteboard generalPasteboard]];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"QSCloudAppCopyLinks"]) {
+        [placeholder putOnPasteboardAsPlainTextOnly:[NSPasteboard generalPasteboard]];
+    }
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudUploadComplete", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"Upload Complete", QSNotifierTitle, [item name], QSNotifierText, nil]);
 }
 

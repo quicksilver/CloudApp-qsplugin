@@ -200,6 +200,13 @@
 			<true/>
 		</dict>
 	</dict>
+	<key>QSDefaults</key>
+	<dict>
+		<key>QSCloudAppItemLimit</key>
+		<integer>10</integer>
+		<key>QSCloudAppCopyLinks</key>
+		<true/>
+	</dict>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
