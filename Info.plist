@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>8</string>
 	<key>QSActions</key>
 	<dict>
 		<key>QSCloudCopyLinkAction</key>
@@ -39,7 +39,7 @@
 			<key>name</key>
 			<string>Copy Link</string>
 			<key>precedence</key>
-			<real>2</real>
+			<real>2.0</real>
 		</dict>
 		<key>QSCloudDeleteItemAction</key>
 		<dict>
@@ -56,7 +56,7 @@
 			<key>name</key>
 			<string>Delete</string>
 			<key>precedence</key>
-			<real>1</real>
+			<real>1.0</real>
 		</dict>
 		<key>QSCloudDisablePrivacyAction</key>
 		<dict>
@@ -202,10 +202,10 @@
 	</dict>
 	<key>QSDefaults</key>
 	<dict>
-		<key>QSCloudAppItemLimit</key>
-		<integer>10</integer>
 		<key>QSCloudAppCopyLinks</key>
 		<true/>
+		<key>QSCloudAppItemLimit</key>
+		<integer>10</integer>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -221,7 +221,39 @@
 		<key>description</key>
 		<string>Upload, download, and manage CloudApp files</string>
 		<key>extendedDescription</key>
-		<string>&lt;h1&gt;CloudApp&lt;/h1&gt;</string>
+		<string>&lt;h1&gt;CloudApp Plugin&lt;/h1&gt;
+&lt;p&gt;This plugin allows you to upload (or "drop") files to CloudApp, download previously dropped files, and manage dropped files.&lt;/p&gt;
+&lt;h2&gt;Preferences&lt;/h2&gt;
+&lt;p&gt;Number of items to index, and whether or not to copy link on upload. Not yet implemented.&lt;/p&gt;
+&lt;h2&gt;Catalog&lt;/h2&gt;
+&lt;p&gt;Your dropped items can be added to the catalog using the "CloudApp Files" catalog entry. It's enabled by default. You can also access dropped items quickly by selecting &lt;code&gt;Cloud.app&lt;/code&gt; and hitting → or /.&lt;/p&gt;
+&lt;h2&gt;Actions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;Copy Link&lt;/dt&gt;
+&lt;dd&gt;Copy the selected item's link to the clipboard. This is usually not necessary. The "text" associated with each item is its link, so built-in Quicksilver actions like Copy, Paste, Type Text, Large Type, etc. should all work directly on the item.&lt;/dd&gt;
+&lt;dt&gt;Get Link&lt;/dt&gt;
+&lt;dd&gt;Displays the link as a URL in Quicksilver's first pane. From there, you can run further actions, but this is usually not necessary. See "Copy Link" above.&lt;/dd&gt;
+&lt;dt&gt;Rename…&lt;/dt&gt;
+&lt;dd&gt;Rename a previously dropped item.&lt;/dd&gt;
+&lt;dt&gt;Download to Folder…&lt;/dt&gt;
+&lt;dd&gt;Save a previously dropped item to a folder on your local disk. Works with multiple selections.&lt;/dd&gt;
+&lt;dt&gt;Delete&lt;/dt&gt;
+&lt;dd&gt;Move a dropped item to the Trash on CloudApp's servers. Items in the Trash are purged automatically after a preset number of days. Works with multiple selections.&lt;/dd&gt;
+&lt;dt&gt;Make Item Public&lt;/dt&gt;
+&lt;dd&gt;Set a dropped item's privacy to "Public". Works with multiple selections if they currently share the same privacy setting.&lt;/dd&gt;
+&lt;dt&gt;Make Item Private&lt;/dt&gt;
+&lt;dd&gt;Set a dropped item's privacy to "Private". Works with multiple selections if they currently share the same privacy setting.&lt;/dd&gt;
+&lt;dt&gt;Toggle Privacy&lt;/dt&gt;
+&lt;dd&gt;Reverse the current privacy setting for a dropped item. Works with multiple selections.&lt;/dd&gt;
+&lt;dt&gt;Upload to CloudApp&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Upload a local file to CloudApp. Works with multiple selections. Progress can be monitored in Quicksilver's Task Viewer (⌘K).&lt;/p&gt;
+&lt;p&gt;By default, a link to the item will be copied to the clipboard on success. If multiple files are uploaded, the clipboard will contain a link for the last one to finish.&lt;/p&gt;
+&lt;p&gt;This action doesn't work with folders. To upload a folder, compress it first with the File Compression Plugin, or just drag it to the CloudApp menubar icon.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2&gt;Authentication&lt;/h2&gt;
+&lt;p&gt;The plug-in assumes you have &lt;code&gt;Cloud.app&lt;/code&gt; installed and attempts to re-use the existing credentials in your Keychain. If you need to create the appropriate item in your Keychain manually for some reason, it should be named "CloudApp".&lt;/p&gt;</string>
 		<key>icon</key>
 		<string>com.linebreak.CloudAppMacOSX</string>
 		<key>relatedBundles</key>

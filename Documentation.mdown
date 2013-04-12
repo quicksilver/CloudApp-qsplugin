@@ -1,0 +1,48 @@
+# CloudApp Plugin #
+
+This plugin allows you to upload (or "drop") files to CloudApp, download previously dropped files, and manage dropped files.
+
+## Preferences ##
+
+Number of items to index, and whether or not to copy link on upload. Not yet implemented.
+
+## Catalog ##
+
+Your dropped items can be added to the catalog using the "CloudApp Files" catalog entry. It's enabled by default. You can also access dropped items quickly by selecting `Cloud.app` and hitting → or /.
+
+## Actions ##
+
+Copy Link
+  : Copy the selected item's link to the clipboard. This is usually not necessary. The "text" associated with each item is its link, so built-in Quicksilver actions like Copy, Paste, Type Text, Large Type, etc. should all work directly on the item.
+
+Get Link
+  : Displays the link as a URL in Quicksilver's first pane. From there, you can run further actions, but this is usually not necessary. See "Copy Link" above.
+
+Rename…
+  : Rename a previously dropped item.
+
+Download to Folder…
+  : Save a previously dropped item to a folder on your local disk. Works with multiple selections.
+
+Delete
+  : Move a dropped item to the Trash on CloudApp's servers. Items in the Trash are purged automatically after a preset number of days. Works with multiple selections.
+
+Make Item Public
+  : Set a dropped item's privacy to "Public". Works with multiple selections if they currently share the same privacy setting.
+
+Make Item Private
+  : Set a dropped item's privacy to "Private". Works with multiple selections if they currently share the same privacy setting.
+
+Toggle Privacy
+  : Reverse the current privacy setting for a dropped item. Works with multiple selections.
+
+Upload to CloudApp
+  : Upload a local file to CloudApp. Works with multiple selections. Progress can be monitored in Quicksilver's Task Viewer (⌘K).
+    
+    By default, a link to the item will be copied to the clipboard on success. If multiple files are uploaded, the clipboard will contain a link for the last one to finish.
+    
+    This action doesn't work with folders. To upload a folder, compress it first with the File Compression Plugin, or just drag it to the CloudApp menubar icon.
+
+## Authentication ##
+
+The plug-in assumes you have `Cloud.app` installed and attempts to re-use the existing credentials in your Keychain. If you need to create the appropriate item in your Keychain manually for some reason, it should be named "CloudApp".
