@@ -89,6 +89,18 @@ static QSCloudDelegate *_sharedInstance;
     return newObject;
 }
 
+- (void)rescanCatalogPreset
+{
+    // coalesce events that would trigger a rescan for a short time
+    [self performSelector:@selector(postRescanNotification) withObject:nil afterDelay:10 extend:YES];
+}
+
+- (void)postRescanNotification
+{
+    NSLog(@"sinaling a rescan for the CloudApp preset");
+    [[NSNotificationCenter defaultCenter] postNotificationName:QSCatalogEntryInvalidated object:@"QSPresetQSCloudAppFiles"];
+}
+
 #pragma mark Cloud API Delegate Methods
 
 - (void)itemListRetrievalSucceeded:(NSArray *)items connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
@@ -110,11 +122,13 @@ static QSCloudDelegate *_sharedInstance;
         NSString *title = [NSString stringWithFormat:@"%@ Updated", name];
         QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudItemUpdated", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, title, QSNotifierTitle, message, QSNotifierText, nil]);
     }
+    [self rescanCatalogPreset];
 }
 
 - (void)itemDeletionDidSucceed:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
 {
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudFileDeleted", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"File Deleted", QSNotifierTitle, [userInfo objectForKey:@"name"], QSNotifierText, nil]);
+    [self rescanCatalogPreset];
 }
 
 - (void)requestDidSucceedWithConnectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
@@ -146,6 +160,7 @@ static QSCloudDelegate *_sharedInstance;
         [placeholder putOnPasteboardAsPlainTextOnly:[NSPasteboard generalPasteboard]];
     }
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudUploadComplete", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"Upload Complete", QSNotifierTitle, [item name], QSNotifierText, nil]);
+    [self rescanCatalogPreset];
 }
 
 @end
