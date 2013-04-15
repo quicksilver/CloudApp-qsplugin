@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>9</string>
+	<string>A</string>
 	<key>QSActions</key>
 	<dict>
 		<key>QSCloudCopyLinkAction</key>
@@ -287,55 +287,10 @@
 			<key>QSCloudAppActionProvider</key>
 			<string>QSCloudAppActionProvider</string>
 		</dict>
-		<key>QSApplicationActionsTemplate</key>
-		<dict>
-			<key>com.domain.application</key>
-			<dict>
-				<key>QSCloudAppExampleCommand</key>
-				<dict>
-					<key>actionClass</key>
-					<string>QSCloudAppActionProvider</string>
-					<key>command</key>
-					<string>QSCloudAppExampleCommand</string>
-					<key>name</key>
-					<string>Application Action Example</string>
-				</dict>
-			</dict>
-		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
 			<key>com.linebreak.CloudAppMacOSX</key>
 			<string>QSCloudAppSource</string>
-		</dict>
-		<key>QSCommandsTemplate</key>
-		<dict>
-			<key>QSCloudAppExampleCommand</key>
-			<dict>
-				<key>command</key>
-				<dict>
-					<key>actionID</key>
-					<string>QSObjCSendMessageAction</string>
-					<key>directArchive</key>
-					<dict>
-						<key>data</key>
-						<dict>
-							<key>qs.action</key>
-							<dict>
-								<key>actionClass</key>
-								<string>QSCloudAppActionProvider</string>
-								<key>actionSelector</key>
-								<string>someSelector</string>
-								<key>icon</key>
-								<string>defaultAction</string>
-								<key>name</key>
-								<string>Do Something</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>directID</key>
-					<string>QSCloudAppInternalCommand</string>
-				</dict>
-			</dict>
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>
@@ -389,16 +344,6 @@
 				<string>QSCloudAppSource</string>
 			</dict>
 		</dict>
-		<key>QSTriggerSetsTemplates</key>
-		<dict>
-			<key>QSCloudAppTriggers</key>
-			<dict>
-				<key>icon</key>
-				<string>KEXT</string>
-				<key>name</key>
-				<string>QSCloudApp</string>
-			</dict>
-		</dict>
 		<key>QSTypeDefinitions</key>
 		<dict>
 			<key>QSCloudFileType</key>
@@ -410,39 +355,8 @@
 	</dict>
 	<key>QSRequirementsTemplate</key>
 	<dict>
-		<key>plugins</key>
-		<array>
-			<dict>
-				<key>id</key>
-				<string>com.qsapp.Another.PlugIn</string>
-				<key>name</key>
-				<string>Another Plug-in</string>
-			</dict>
-		</array>
+		<key>version</key>
+		<string>4001</string>
 	</dict>
-	<key>QSTriggerAdditionsTemplate</key>
-	<array>
-		<dict>
-			<key>ID</key>
-			<string>QSCloudAppTrigger</string>
-			<key>command</key>
-			<string>QSCloudAppExampleCommand</string>
-			<key>defaults</key>
-			<dict>
-				<key>characters</key>
-				<string>x</string>
-				<key>keyCode</key>
-				<integer>124</integer>
-				<key>modifiers</key>
-				<integer>9961768</integer>
-				<key>type</key>
-				<string>QSHotKeyTrigger</string>
-			</dict>
-			<key>name</key>
-			<string>Example Trigger</string>
-			<key>set</key>
-			<string>QSCloudApp</string>
-		</dict>
-	</array>
 </dict>
 </plist>
