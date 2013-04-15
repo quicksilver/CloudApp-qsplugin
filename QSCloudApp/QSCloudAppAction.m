@@ -147,6 +147,8 @@
             QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudDownloadError", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"Download Failed", QSNotifierTitle, [error localizedDescription], QSNotifierText, nil]);
         } else if ([fileContents writeToFile:path atomically:NO]) {
             savedFile = [QSObject fileObjectWithPath:path];
+            // notification for event triggers
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCloudAppFileDownload" userInfo:[NSDictionary dictionaryWithObject:savedFile forKey:@"object"]];
         }
     }
     return savedFile;

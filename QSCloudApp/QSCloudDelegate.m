@@ -123,12 +123,18 @@ static QSCloudDelegate *_sharedInstance;
         QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudItemUpdated", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, title, QSNotifierTitle, message, QSNotifierText, nil]);
     }
     [self rescanCatalogPreset];
+    // notification for event triggers
+    NSString *ident = [NSString stringWithFormat:@"CloudAppFile:%@", [item name]];
+    QSObject *eventTriggerObject = [QSObject objectWithIdentifier:ident];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCloudAppItemUpdate" userInfo:[NSDictionary dictionaryWithObject:eventTriggerObject forKey:@"object"]];
 }
 
 - (void)itemDeletionDidSucceed:(CLWebItem *)item connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
 {
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudFileDeleted", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"File Deleted", QSNotifierTitle, [userInfo objectForKey:@"name"], QSNotifierText, nil]);
     [self rescanCatalogPreset];
+    // notification for event triggers
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCloudAppItemDelete" userInfo:[NSDictionary dictionaryWithObject:[NSNull null] forKey:@"object"]];
 }
 
 - (void)requestDidSucceedWithConnectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
@@ -154,13 +160,15 @@ static QSCloudDelegate *_sharedInstance;
 	//NSLog(@"[UPLOAD SUCCESS]: %@, %@", connectionIdentifier, item);
     QSTask *task = [userInfo objectForKey:@"task"];
     QSObject *placeholder = [userInfo objectForKey:@"upload"];
-    [self objectFromWebItem:item existingObject:placeholder];
+    placeholder = [self objectFromWebItem:item existingObject:placeholder];
     [task stopTask:nil];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"QSCloudAppCopyLinks"]) {
         [placeholder putOnPasteboardAsPlainTextOnly:[NSPasteboard generalPasteboard]];
     }
     QSShowNotifierWithAttributes([NSDictionary dictionaryWithObjectsAndKeys:@"QSCloudUploadComplete", QSNotifierType, [QSResourceManager imageNamed:@"com.linebreak.CloudAppMacOSX"], QSNotifierIcon, @"Upload Complete", QSNotifierTitle, [item name], QSNotifierText, nil]);
     [self rescanCatalogPreset];
+    // notification for event triggers
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCloudAppFileUpload" userInfo:[NSDictionary dictionaryWithObject:placeholder forKey:@"object"]];
 }
 
 @end

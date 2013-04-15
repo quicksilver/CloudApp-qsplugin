@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>A</string>
+	<string>B</string>
 	<key>QSActions</key>
 	<dict>
 		<key>QSCloudCopyLinkAction</key>
@@ -332,16 +332,51 @@
 				</array>
 			</dict>
 		</dict>
-		<key>QSTriggerEventsTemplate</key>
+		<key>QSTriggerEvents</key>
 		<dict>
-			<key>QSCloudAppSomeEvent</key>
+			<key>QSCloudAppFileDownload</key>
 			<dict>
 				<key>icon</key>
-				<string>KEXT</string>
+				<string>com.linebreak.CloudAppMacOSX</string>
 				<key>name</key>
-				<string>Do something in response to this event</string>
+				<string>File Downloaded</string>
 				<key>provider</key>
-				<string>QSCloudAppSource</string>
+				<string>QSCloudAppDelegate</string>
+				<key>type</key>
+				<string>CloudApp</string>
+			</dict>
+			<key>QSCloudAppFileUpload</key>
+			<dict>
+				<key>icon</key>
+				<string>com.linebreak.CloudAppMacOSX</string>
+				<key>name</key>
+				<string>File Uploaded</string>
+				<key>provider</key>
+				<string>QSCloudAppDelegate</string>
+				<key>type</key>
+				<string>CloudApp</string>
+			</dict>
+			<key>QSCloudAppItemDelete</key>
+			<dict>
+				<key>icon</key>
+				<string>com.linebreak.CloudAppMacOSX</string>
+				<key>name</key>
+				<string>Item Deleted</string>
+				<key>provider</key>
+				<string>QSCloudAppDelegate</string>
+				<key>type</key>
+				<string>CloudApp</string>
+			</dict>
+			<key>QSCloudAppItemUpdate</key>
+			<dict>
+				<key>icon</key>
+				<string>com.linebreak.CloudAppMacOSX</string>
+				<key>name</key>
+				<string>Item Updated</string>
+				<key>provider</key>
+				<string>QSCloudAppDelegate</string>
+				<key>type</key>
+				<string>CloudApp</string>
 			</dict>
 		</dict>
 		<key>QSTypeDefinitions</key>
