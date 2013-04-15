@@ -412,9 +412,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D499EDF916332A2C00E29D4B /* QSCloudApp */ = {
+		D499EDF916332A2C00E29D4B /* CloudApp Plugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "QSCloudApp" */;
+			buildConfigurationList = D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "CloudApp Plugin" */;
 			buildPhases = (
 				D499EDF516332A2C00E29D4B /* ShellScript */,
 				D499EDF616332A2C00E29D4B /* Sources */,
@@ -425,7 +425,7 @@
 			);
 			dependencies = (
 			);
-			name = QSCloudApp;
+			name = "CloudApp Plugin";
 			productName = QSCloudApp;
 			productReference = D499EDFA16332A2C00E29D4B /* QSCloudApp.qsplugin */;
 			productType = "com.apple.product-type.bundle";
@@ -452,7 +452,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D499EDF916332A2C00E29D4B /* QSCloudApp */,
+				D499EDF916332A2C00E29D4B /* CloudApp Plugin */,
 			);
 		};
 /* End PBXProject section */
@@ -596,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "QSCloudApp" */ = {
+		D499EE1616332A2C00E29D4B /* Build configuration list for PBXNativeTarget "CloudApp Plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D499EE1716332A2C00E29D4B /* Debug */,
