@@ -47,6 +47,8 @@
 		D499EE1016332A2C00E29D4B /* QSCloudAppAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */; };
 		D499EE1316332A2C00E29D4B /* QSCloudAppSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */; };
 		D4F5E5681713421E00C2629C /* QSCloudDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F5E5671713421E00C2629C /* QSCloudDelegate.m */; };
+		D4F5E57517188FC200C2629C /* QSCloudPrefPane.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F5E57417188FC200C2629C /* QSCloudPrefPane.m */; };
+		D4F5E57717189D0900C2629C /* QSCloudPrefPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F5E57617189D0900C2629C /* QSCloudPrefPane.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +149,9 @@
 		D4E44C9E170D1B6E005C0223 /* QSCloudAppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSCloudAppDefines.h; sourceTree = "<group>"; };
 		D4F5E5661713421E00C2629C /* QSCloudDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSCloudDelegate.h; sourceTree = "<group>"; };
 		D4F5E5671713421E00C2629C /* QSCloudDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSCloudDelegate.m; sourceTree = "<group>"; };
+		D4F5E57317188FC200C2629C /* QSCloudPrefPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSCloudPrefPane.h; sourceTree = "<group>"; };
+		D4F5E57417188FC200C2629C /* QSCloudPrefPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSCloudPrefPane.m; sourceTree = "<group>"; };
+		D4F5E57617189D0900C2629C /* QSCloudPrefPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSCloudPrefPane.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,8 +369,11 @@
 				D499EE0F16332A2C00E29D4B /* QSCloudAppAction.m */,
 				D499EE1116332A2C00E29D4B /* QSCloudAppSource.h */,
 				D499EE1216332A2C00E29D4B /* QSCloudAppSource.m */,
+				D4F5E57317188FC200C2629C /* QSCloudPrefPane.h */,
+				D4F5E57417188FC200C2629C /* QSCloudPrefPane.m */,
 				D4153EB01638650B002AE924 /* Cloud */,
 				D499EE0016332A2C00E29D4B /* Supporting Files */,
+				D4F5E57017188E4F00C2629C /* Resources */,
 			);
 			path = QSCloudApp;
 			sourceTree = "<group>";
@@ -392,6 +400,14 @@
 			name = Configuration;
 			path = /private/tmp/QS/Configuration;
 			sourceTree = "<absolute>";
+		};
+		D4F5E57017188E4F00C2629C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4F5E57617189D0900C2629C /* QSCloudPrefPane.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -456,6 +472,7 @@
 				D4299B4E16B0E50E005744B1 /* LICENSE in Resources */,
 				D4299B4F16B0E50E005744B1 /* Readme.markdown in Resources */,
 				D4299B5016B0E50E005744B1 /* ReleaseChecklist.markdown in Resources */,
+				D4F5E57717189D0900C2629C /* QSCloudPrefPane.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +528,7 @@
 				D4299B3A16B0E50E005744B1 /* SBJsonTokeniser.m in Sources */,
 				D4299B3B16B0E50E005744B1 /* SBJsonWriter.m in Sources */,
 				D4F5E5681713421E00C2629C /* QSCloudDelegate.m in Sources */,
+				D4F5E57517188FC200C2629C /* QSCloudPrefPane.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

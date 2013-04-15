@@ -4,6 +4,12 @@ This plugin allows you to upload (or "drop") files to CloudApp, download previou
 
 ## Preferences ##
 
+Index up to `N` recent items
+  : Controls the number of items added to the catalog from CloudApp.
+
+Copy Link After Upload
+  : When uploading a file, enabling this will automatically copy it's public link to the clipboard.
+
 Number of items to index, and whether or not to copy link on upload. Not yet implemented.
 
 ## Catalog ##
@@ -22,7 +28,7 @@ Rename…
   : Rename a previously dropped item.
 
 Download to Folder…
-  : Save a previously dropped item to a folder on your local disk. Works with multiple selections.
+  : Save a previously dropped item to a folder on your local disk. Works with multiple selections. The resulting local file will be selected in Quicksilver.
 
 Delete
   : Move a dropped item to the Trash on CloudApp's servers. Items in the Trash are purged automatically after a preset number of days. Works with multiple selections.

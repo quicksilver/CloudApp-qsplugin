@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>9</string>
 	<key>QSActions</key>
 	<dict>
 		<key>QSCloudCopyLinkAction</key>
@@ -224,6 +224,12 @@
 		<string>&lt;h1&gt;CloudApp Plugin&lt;/h1&gt;
 &lt;p&gt;This plugin allows you to upload (or "drop") files to CloudApp, download previously dropped files, and manage dropped files.&lt;/p&gt;
 &lt;h2&gt;Preferences&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;Index up to &lt;code&gt;N&lt;/code&gt; recent items&lt;/dt&gt;
+&lt;dd&gt;Controls the number of items added to the catalog from CloudApp.&lt;/dd&gt;
+&lt;dt&gt;Copy Link After Upload&lt;/dt&gt;
+&lt;dd&gt;When uploading a file, enabling this will automatically copy it's public link to the clipboard.&lt;/dd&gt;
+&lt;/dl&gt;
 &lt;p&gt;Number of items to index, and whether or not to copy link on upload. Not yet implemented.&lt;/p&gt;
 &lt;h2&gt;Catalog&lt;/h2&gt;
 &lt;p&gt;Your dropped items can be added to the catalog using the "CloudApp Files" catalog entry. It's enabled by default. You can also access dropped items quickly by selecting &lt;code&gt;Cloud.app&lt;/code&gt; and hitting → or /.&lt;/p&gt;
@@ -236,7 +242,7 @@
 &lt;dt&gt;Rename…&lt;/dt&gt;
 &lt;dd&gt;Rename a previously dropped item.&lt;/dd&gt;
 &lt;dt&gt;Download to Folder…&lt;/dt&gt;
-&lt;dd&gt;Save a previously dropped item to a folder on your local disk. Works with multiple selections.&lt;/dd&gt;
+&lt;dd&gt;Save a previously dropped item to a folder on your local disk. Works with multiple selections. The resulting local file will be selected in Quicksilver.&lt;/dd&gt;
 &lt;dt&gt;Delete&lt;/dt&gt;
 &lt;dd&gt;Move a dropped item to the Trash on CloudApp's servers. Items in the Trash are purged automatically after a preset number of days. Works with multiple selections.&lt;/dd&gt;
 &lt;dt&gt;Make Item Public&lt;/dt&gt;
@@ -341,18 +347,18 @@
 			<key>QSCloudAppSource</key>
 			<string>QSCloudAppSource</string>
 		</dict>
-		<key>QSPreferencePanesTemplate</key>
+		<key>QSPreferencePanes</key>
 		<dict>
-			<key>QSCloudAppPrefPaneTemplate</key>
+			<key>QSCloudPrefPane</key>
 			<dict>
 				<key>class</key>
-				<string>QSCloudAppPrefPane</string>
+				<string>QSCloudPrefPane</string>
 				<key>description</key>
-				<string>Preferences</string>
+				<string>Control the CloudApp plugin's behavior</string>
 				<key>icon</key>
-				<string>KEXT</string>
+				<string>com.linebreak.CloudAppMacOSX</string>
 				<key>name</key>
-				<string>QSCloudApp</string>
+				<string>CloudApp</string>
 			</dict>
 		</dict>
 		<key>QSProxiesTemplate</key>
