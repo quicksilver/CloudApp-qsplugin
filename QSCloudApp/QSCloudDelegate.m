@@ -148,6 +148,10 @@ static QSCloudDelegate *_sharedInstance;
     if (entry && [entry respondsToSelector:@selector(completeScanWithContents:)]) {
         [entry completeScanWithContents:nil];
     }
+    QSTask *task = [userInfo objectForKey:@"task"];
+    if (task && [task respondsToSelector:@selector(stopTask:)]) {
+        [task stopTask:nil];
+    }
 }
 
 - (void)fileUploadDidProgress:(CGFloat)percentageComplete connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo {
