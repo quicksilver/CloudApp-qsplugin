@@ -44,7 +44,7 @@
     CLAPIEngine *engine = [[QSCloudDelegate sharedInstance] engine];
     NSDictionary *info = @{@"entry": theEntry};
     NSUInteger itemLimit = [[NSUserDefaults standardUserDefaults] integerForKey:@"QSCloudAppItemLimit"];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    runOnMainQueueAsync(dispatch_get_main_queue(), ^{
         __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:itemLimit userInfo:info];
     });
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
