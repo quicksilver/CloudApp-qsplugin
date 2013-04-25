@@ -97,7 +97,7 @@ static QSCloudDelegate *_sharedInstance;
 
 - (void)postRescanNotification
 {
-    NSLog(@"sinaling a rescan for the CloudApp preset");
+    //NSLog(@"signaling a rescan for the CloudApp preset");
     [[NSNotificationCenter defaultCenter] postNotificationName:QSCatalogEntryInvalidated object:@"QSPresetQSCloudAppFiles"];
 }
 
