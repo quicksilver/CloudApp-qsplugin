@@ -6,6 +6,7 @@
 //
 
 #import "QSCloudDelegate.h"
+#import "QSCloudAppSource.h"
 
 @implementation QSCloudDelegate
 
@@ -109,8 +110,8 @@ static QSCloudDelegate *_sharedInstance;
     for (CLWebItem *cloudItem in items) {
         [objects addObject:[self objectFromWebItem:cloudItem existingObject:nil]];
     }
-    QSCatalogEntry *entry = [userInfo objectForKey:@"entry"];
-    [entry completeScanWithContents:objects];
+    [[QSCloudAppSource sharedInstance] setHoldArray:objects];
+    dispatch_semaphore_signal([QSCloudAppSource sharedInstance].semaphore);
     //NSLog(@"Cloud Item list: %@", items);
 }
 
@@ -139,18 +140,19 @@ static QSCloudDelegate *_sharedInstance;
 
 - (void)requestDidSucceedWithConnectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo
 {
-    //	NSLog(@"[SUCCESS]: %@", connectionIdentifier);
+    NSLog(@"[SUCCESS]: %@", connectionIdentifier);
 }
 
 - (void)requestDidFailWithError:(NSError *)error connectionIdentifier:(NSString *)connectionIdentifier userInfo:(id)userInfo {
 	NSLog(@"Error communicating with CloudApp: %@", error);
-    QSCatalogEntry *entry = [userInfo objectForKey:@"entry"];
-    if (entry && [entry respondsToSelector:@selector(completeScanWithContents:)]) {
-        [entry completeScanWithContents:nil];
-    }
     QSTask *task = [userInfo objectForKey:@"task"];
     if (task && [task respondsToSelector:@selector(stopTask:)]) {
         [task stopTask:nil];
+    }
+    // request was an 'objectsForEntry' request
+    if ([QSCloudAppSource sharedInstance].semaphore) {
+        [QSCloudAppSource sharedInstance].holdArray = @[];
+        dispatch_semaphore_signal([QSCloudAppSource sharedInstance].semaphore);
     }
 }
 

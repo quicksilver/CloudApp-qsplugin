@@ -10,6 +10,23 @@
 
 @implementation QSCloudAppSource
 
+@synthesize holdArray, semaphore;
+
++ (QSCloudAppSource *)sharedInstance {
+    static QSCloudAppSource *CloudAppSource = nil;
+    if (!CloudAppSource) {
+        CloudAppSource = [[QSCloudAppSource alloc] init];
+    }
+    return CloudAppSource;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        semaphore = nil;
+    }
+    return self;
+}
+
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry
 {
     // always rescan
@@ -21,14 +38,19 @@
 	return nil;
 }
 
-- (BOOL)loadObjectsForEntry:(QSCatalogEntry *)theEntry
+- (NSArray *)objectsForEntry:(QSCatalogEntry *)theEntry
 {
+    semaphore = dispatch_semaphore_create(0);
     CLAPIEngine *engine = [[QSCloudDelegate sharedInstance] engine];
     NSDictionary *info = @{@"entry": theEntry};
     NSUInteger itemLimit = [[NSUserDefaults standardUserDefaults] integerForKey:@"QSCloudAppItemLimit"];
-    __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:itemLimit userInfo:info];
-    //NSLog(@"Cloud Transaction ID: %@", result);
-    return YES;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        __unused NSString *result = [engine getItemListStartingAtPage:1 itemsPerPage:itemLimit userInfo:info];
+    });
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_release(semaphore);
+    semaphore = nil;
+    return holdArray;
 }
 
 #pragma mark Object Handler Methods
